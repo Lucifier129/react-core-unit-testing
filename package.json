@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "react core unit testing",
   "scripts": {
-    "test": "jest"
+    "test": "npm run test:preact && npm run test:inferno && npm run react-lite",
+    "test:react": "jest",
+    "test:preact": "TEST_ENV=preact jest",
+    "test:inferno": "TEST_ENV=inferno jest",
+    "test:react-lite": "TEST_ENV=react-lite jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/jest/preprocessor.js",
@@ -24,10 +28,11 @@
     "webpack": "^1.12.2"
   },
   "dependencies": {
-    "inferno": "^0.7.27",
-    "inferno-compat": "^0.7.27",
-    "preact": "^7.1.0",
-    "preact-compat": "^3.9.3",
-    "react-lite": "^0.15.28"
+    "inferno": "latest",
+    "inferno-compat": "latest",
+    "preact": "latest",
+    "preact-compat": "latest",
+    "react": "latest",
+    "react-lite": "latest"
   }
 }
