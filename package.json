@@ -5,9 +5,9 @@
   "scripts": {
     "test": "npm run test:preact && npm run test:inferno && npm run react-lite",
     "test:react": "jest",
-    "test:preact": "TEST_ENV=preact jest",
-    "test:inferno": "TEST_ENV=inferno jest",
-    "test:react-lite": "TEST_ENV=react-lite jest"
+    "test:preact": "cross-env TEST_ENV=preact jest",
+    "test:inferno": "cross-env TEST_ENV=inferno jest",
+    "test:react-lite": "cross-env TEST_ENV=react-lite jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/jest/preprocessor.js",
@@ -23,6 +23,7 @@
     "babel-jest": "^5.3.0",
     "babel-loader": "^5.3.2",
     "babel-runtime": "^5.8.25",
+    "cross-env": "^5.0.0",
     "jest-cli": "^0.8.1",
     "jest-webpack-alias": "^2.0.0",
     "webpack": "^1.12.2"
@@ -33,6 +34,7 @@
     "preact": "latest",
     "preact-compat": "latest",
     "react": "latest",
+    "react-dom": "latest",
     "react-lite": "latest"
   }
 }
