@@ -4,10 +4,12 @@
   "description": "react core unit testing",
   "scripts": {
     "test": "npm run test:preact && npm run test:inferno && npm run react-lite",
-    "test:react": "jest",
-    "test:preact": "cross-env TEST_ENV=preact jest",
-    "test:inferno": "cross-env TEST_ENV=inferno jest",
-    "test:react-lite": "cross-env TEST_ENV=react-lite jest"
+    "test:react": "cross-env TEST_TARGET=react jest",
+    "test:preact": "cross-env TEST_TARGET=preact-compat jest",
+    "test:inferno": "cross-env TEST_TARGET=inferno-compat jest",
+    "test:react-lite": "cross-env TEST_TARGET=react-lite jest",
+    "test:qreact": "cross-env TEST_TARGET=qreact jest",
+    "test:anu": "cross-env TEST_TARGET=../React jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/jest/preprocessor.js",
@@ -29,12 +31,14 @@
     "webpack": "^1.12.2"
   },
   "dependencies": {
+    "anujs": "latest",
     "inferno": "latest",
     "inferno-compat": "latest",
     "preact": "latest",
     "preact-compat": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "qreact": "latest",
+    "react": "v15.6.0",
+    "react-dom": "v15.6.0",
     "react-lite": "latest"
   }
 }
